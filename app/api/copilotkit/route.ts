@@ -37,7 +37,7 @@ const renderDashboardTool = defineTool({
     "Render an analytics dashboard from a JSON layout tree. Call this AFTER gathering all required data with run_analytics_query.",
   parameters: z.object({
     dashboard: z
-      .record(z.unknown())
+      .record(z.string(), z.unknown())
       .describe("Dashboard spec: { title?, description?, layout: LayoutNode }."),
   }),
   execute: async (_args) => {
